@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
-
+import Image  from 'next/image';
+import starImage from '../images/icon-star.svg';
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -9,51 +10,32 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
+       
 
         <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
+          <div className={styles.card}>
+            <div className={styles.stardiv}>
+            <Image src={starImage} width={20} height={20} alt="starimage" className={styles.starimage}/>
+            </div>
+            <h3 styles={styles.h3}>How did we do?</h3>
+            <p styles={styles.headertxt}> Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering! .</p>
+            <div className={styles.rating}>
+              <button className={styles.ratingbtn}>1</button>
+              <button className={styles.ratingbtn}>2</button>
+              <button className={styles.ratingbtn}>3</button>
+              <button className={styles.ratingbtn}>4</button>
+              <button className={styles.ratingbtn}>5</button>
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
+            </div>
+            <button className={styles.submitbtn}>Submit</button>
+          </div>
 
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
 
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+          
         </div>
       </main>
 
-      <footer className={styles.footer}>
-        <a href="https://next.new" target="_blank" rel="noopener noreferrer">
-          Created with&nbsp;<b>next.new</b>&nbsp;⚡️
-        </a>
-      </footer>
+   
     </div>
   );
 }
