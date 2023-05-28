@@ -3,8 +3,7 @@ import Image from 'next/image';
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import starImage from '../images/icon-star.svg';
-import thanks from '../images/illustration-thank-you.svg';
-
+import ThankYou from './components/ThankYou';
 const ratings = [
   { id: 1, value: '1' },
   { id: 2, value: '2' },
@@ -12,25 +11,6 @@ const ratings = [
   { id: 4, value: '4' },
   { id: 5, value: '5' },
 ];
-
-const ThankYouMessage = ({ selectedRating }) => (
-  <div>
-    <main className={styles.main}>
-      <div className={styles.grid}>
-        <div className={styles.thankcard}>
-          <Image src={thanks} alt="thank you" width={100} height={90} />
-          <div className={styles.thanktext}>
-            <h4 className={styles.thanktextp}>You selected {selectedRating.value} out of 5</h4>
-          </div>
-          <h3>Thank you!</h3>
-          <p>
-            We appreciate you taking the time to give a rating. If you ever need more support, don’t hesitate to get in
-          </p>
-        </div>
-      </div>
-    </main>
-  </div>
-);
 
 const Home = () => {
   const [isSubmitted, setSubmitted] = useState(false);
@@ -61,7 +41,7 @@ const Home = () => {
         <link rel="icon" href="../images/favicon-32x32.png" />
       </Head>
       {isSubmitted ? (
-        <ThankYouMessage selectedRating={selectedRating} />
+        <ThankYou selectedRating={selectedRating} />
       ) : (
         <main className={styles.main}>
           <div className={styles.grid}>
