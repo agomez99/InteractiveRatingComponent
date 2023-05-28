@@ -34,16 +34,24 @@ const ThankYouMessage = ({ selectedRating }) => (
 
 const Home = () => {
   const [isSubmitted, setSubmitted] = useState(false);
-  const [selectedRating, setSelectedRating] = useState(ratings[0]);
+  const [selectedRating, setSelectedRating] = useState("");
 
   const handleRatingButtonClick = (event) => {
-    setSelectedRating(ratings.find((rating) => rating.id === +event.target.textContent));
+    const ratingId = parseInt(event.target.textContent);
+    const selected = ratings.find((rating) => rating.id === ratingId);
+    setSelectedRating(selected);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log('Form submitted');
-    setSubmitted(true);
+    if (selectedRating.value) {
+      console.log(selectedRating);
+      setSubmitted(true);
+    } else {
+      setSubmitted(false);
+
+      alert('Please select a rating');
+    }
   };
 
   return (
@@ -65,13 +73,13 @@ const Home = () => {
               <p>Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
               <div className={styles.rating}>
                 {ratings.map((rating) => (
-                  <button key={rating.id} className={styles.ratingbtn} onClick={handleRatingButtonClick}>
+                  <button key={rating.id} className={styles.ratingbtn} onClick={handleRatingButtonClick} value={rating.value} checked={selectedRating.value === rating.value}>
                     {rating.value}
                   </button>
                 ))}
               </div>
               <form onSubmit={handleSubmit}>
-                <button className={styles.submitbtn}>Submit</button>
+                <button className={styles.submitbtn} >Submit</button>
               </form>
             </div>
           </div>
