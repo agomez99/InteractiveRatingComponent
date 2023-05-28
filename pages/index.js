@@ -53,7 +53,7 @@ const Home = () => {
               <p>Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
               <div className={styles.rating}>
                 {ratings.map((rating) => (
-                  <button key={rating.id} className={styles.ratingbtn} onClick={handleRatingButtonClick} value={rating.value} checked={selectedRating.value === rating.value}>
+                  <button key={rating.id} className={styles.ratingbtn} onClick={handleRatingButtonClick} value={rating.value} >
                     {rating.value}
                   </button>
                 ))}
