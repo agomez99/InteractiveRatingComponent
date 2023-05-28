@@ -36,8 +36,18 @@
   border-radius: 25px;
   background-color: hsl(213, 19%, 18%);
   
+
 }
 
+.card p {
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: hsl(217, 12%, 63%);
+  font-size: 15px;
+  margin-bottom:10%;
+  font-family: 'Overpass', sans-serif;
+}
 
 .card h3 {
   margin: 0 0 1rem 0;
@@ -48,8 +58,40 @@
   margin-top:10%;
 }
 
+.thankcard {
+  margin: 1rem;
+  flex-basis: 45%;
+  padding: 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 25px;
+  background-color: hsl(213, 19%, 18%);
+}
+.thanktext{
+  border-radius: 25px;
+  background-color: hsl(213, 20%, 24%);
+  justify-content: center;
+}
+.thanktextp{
+  color:hsl(25, 97%, 53%);
+  font-weight: 300;
+  font-size: 14px;
+  padding:5px;
 
-.card p {
+}
+
+.thankcard h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+  color:hsl(0, 0%, 100%);
+  font-family: 'Overpass', sans-serif;
+  font-weight: 200;
+  margin-top:10%;
+}
+
+
+
+.thankcard p {
   margin: 0;
   font-size: 1.25rem;
   line-height: 1.5;
@@ -93,6 +135,14 @@ margin-top: 25%;
   background-color: hsl(25, 97%, 53%);
   color:white;
 }
+.ratingbtn:active {
+  top: 2px;
+  left: 1px;
+  background-color: hsl(25, 97%, 53%);
+  color:white;
+}
+
+
 .submitbtn{
   width:300px;
   height:40px;
